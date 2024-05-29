@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --btn-block: black;
+  --color-primary: rgb(255, 244, 30);
+  --color-light: rgb(0, 0, 0);
+  --border-radiuse-one: 15px; /* border-radiuse ​សម្រាប់ទាញគេម image and icon  */
+  --boder-radiuse-two: 20px;
+  --btn-one: rgb(244, 3, 3);
+  --box-shadow-one: 0 0 10px rgb(252, 10, 10);
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.8%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(255, 254, 251);
+}
+ul {
+  list-style-type: none; /* for style lists */
+}
+
+a {
+  text-decoration: none;
+}
+a,
+p,
+li,
+span {
+  font-size: 2rem;
+}
+h1 {
+  font-size: 4rem;
+}
+h2,
+h3,
+h4,
+h5 {
+  font-size: 3rem;
+}
+.logo {
+  width: 100px;
+}
+.logo > img {
+  width: 100%;
+}
+.nav-lists {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  /* background-color: rgb(33, 33, 66); */
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.container-width {
+  max-width: 1020px;
+  margin: 0 auto;
+}
+/* navigation bar */
+.top-page {
+  background-color: rgb(243, 193, 193); /* color all top-page */
+  padding: 2rem;
+
+  position: sticky; /* Make a top-page doesn't movement */
+  top: 0;
+}
+.nav-links > a {
+  color: var(--color-light);
+}
+.nav-links > a:hover {
+  color: blue;
+}
+.icon-toggler {
+  color: var(--color-light);
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .navigation {
+    /* croll in croll out of navigation bar(home,course,pricing,about) */
+    flex-wrap: wrap;
+  }
+  .icon-toggler {
+    display: block;
+  }
+  .nav-lists {
+    flex-direction: column;
+    width: 100%;
+    margin: 2.5% 0;
+  }
+  .nav-links {
+    border-bottom: 1px solid rgb(137, 137, 137);
+  }
+}
+/* end of  navigation bar*/
+
+/* hero section  */
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 2.5rem; /* hight weidth */
+  font-weight: bold; /* កម្រាស់នៃfont*/
+  border: none;
+  font-size: 2.2rem;
+  border-radius: var(--border-radiuse-one); /* ues to ទាញគេម */
+  cursor: zoom-out;
+}
+
+.btn-primary {
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.btn-one {
+  background-color: var(--btn-block); /* button */
+  color: rgb(246, 246, 246);
+}
+.hero-image > img {
+  width: 100%;
+}
+.hero-image {
+  max-width: 600px;
+}
+
+.grid-1x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+} /* កន្លែង​ gride-1x2 and gride-1x3 ប្រសឺនបើដាក់នៅខាងក្រោមវាមិដំណើរការទេ  */
+.grid-1x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.grid-1x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+@media screen and (max-width: 900px) {
+  .grid-1x3 {
+    grid-template-columns: repeat(2, 1fr); /* second screen */
+  }
+  /* When I put grid-1x3 under grid-1x2 it has problem of small screen */
+  /* Code always running above to below */
+}
+@media screen and (max-width: 900px) {
+  .grid-1x4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .grid-1x2 {
+    grid-template-columns: 1fr;
+  }
+  .grid-1x3 {
+    grid-template-columns: 1fr; /* small screen */
+  }
+  .grid-1x4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.hero {
+  background-color: var(--color-light); /* color all screen */
+}
+
+.All-grid {
+  align-items: center;
+}
+.hero-heading {
+  /* it the same uesing   hero-desc > h1 { } */
+  /* ដើប្បីអោយកន្លែងfont welcome to and reanmore.com ជិតគ្នាឬឆ្ងាយគ្នា */
+  line-height: 1.2;
+  color: var(--btn-one);
+}
+.text {
+  margin: 2rem 0; /* ដើប្បីអោយtextមានគម្លាតពីheading and button */
+  color: var(--btn-one);
+}
+@media screen and (max-width: 768px) {
+  /* use when zoom in. make all iteam to center */
+
+  .hero-desc {
+    text-align: center;
+  }
+  .All-grid {
+    padding: 2rem;
+  }
+}
+
+/* end of hero section */
+/* courses section */
+.tittle {
+  text-align: center;
+  font-size: 5rem;
+  margin: 8rem;
+  color: chartreuse;
+}
+.courses-card {
+  /* width: 300px; */
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--boder-radiuse-two);
+  box-shadow: var(--box-shadow-one);
+}
+.courses-image {
+  width: 100%;
+}
+.courses-image > img {
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+.courses-heading {
+  text-align: center;
+}
+.courses-card .courses-heading > .courses-text {
+  text-align: center;
+}
+.courses-card > .courses-text {
+  margin: 1rem;
+  background-color: white;
+}
+
+.btn-container {
+  display: flex;
+  /* padding: 2rem; */
+  gap: 1rem;
+}
+.btn-accent {
+  background-color: black;
+  color: rgb(151, 249, 13);
+}
+.btn-block {
+  width: 100%;
+  background-color: rgb(13, 12, 12);
+}
+.courses-section {
+  padding: 0 3rem;
+  /* 0 verticalបញ្ឈរ and 3 horizontalផ្ដេក */
+}
+
+/* -- end for courses section --> */
+
+/* -- categories section --> */
+
+.cate-heading {
+  text-align: center;
+  font-size: 5rem;
+  margin: 8rem 0;
+  color: crimson;
+}
+.icon-cate-link {
+  width: 150px;
+}
+.icon-cate-link > img {
+  width: 100%;
+  transition: transform 0.2s;
+  /* border-radius: 40px 40px 0 0; */
+}
+.cate-link:hover > .icon-cate-link > img {
+  transform: scale(1.2);
+}
+.cate-link {
+  background-color: rgb(243, 243, 243);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: var(--boder-radiuse-two);
+  box-shadow: var(--box-shadow-one);
+  padding: 3rem;
+}
+.cate-link {
+  background-color: rgb(239, 239, 239);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: var(--boder-radiuse-two);
+  box-shadow: var(--box-shadow-one);
+  padding: 3rem;
+}
+.cate-link {
+  background-color: rgb(216, 216, 216);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: var(--boder-radiuse-two);
+  box-shadow: var(--box-shadow-one);
+  padding: 3rem;
+}
+.cate-link {
+  background-color: rgb(237, 237, 237);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border-radius: var(--boder-radiuse-two);
+  box-shadow: var(--box-shadow-one);
+  padding: 3rem;
+}
+.categories-section {
+  padding: 0 3rem;
+  /* for pull(ទាញ) គេម(padding) */
+}
+.cate-link > h3 {
+  color: rgb(244, 11, 166);
+}
+/* footer */
+.footer {
+  background-color: rgb(13, 13, 38);
+  margin-top: 8rem;
+  padding: 10rem /* (top and button) */ 2rem /* right and left */; /* for padding fo footer */
+}
+
+.footer-links > a {
+  color: rgb(172, 172, 172);
+}
+.footer-links > a:hover {
+  color: var(--color-light);
+}
+
+.copyright {
+  color: rgb(187, 185, 185);
+}
